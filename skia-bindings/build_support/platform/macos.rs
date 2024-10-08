@@ -9,7 +9,7 @@ pub struct MacOs;
 
 impl PlatformDetails for MacOs {
     fn uses_freetype(&self, _config: &BuildConfiguration) -> bool {
-        false
+        true
     }
 
     fn gn_args(&self, _config: &BuildConfiguration, builder: &mut GnArgsBuilder) {
