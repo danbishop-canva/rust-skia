@@ -136,6 +136,7 @@ impl FinalBuildConfiguration {
                 .arg("skia_use_xps", no())
                 .arg("skia_use_dng_sdk", yes_if(features.dng))
                 .arg("skia_use_freetype_woff2", yes_if(features.freetype_woff2))
+                .arg("skia_use_fonthost_mac", no())
                 .arg("cc", quote(&build.cc))
                 .arg("cxx", quote(&build.cxx));
 
