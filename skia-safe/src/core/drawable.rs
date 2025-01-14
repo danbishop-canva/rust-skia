@@ -92,11 +92,9 @@ pub use gpu_draw_handler::*;
 
 #[cfg(feature = "gpu")]
 pub mod gpu_draw_handler {
-    use std::fmt;
-
+    use crate::{gpu, prelude::*};
     use skia_bindings::{self as sb, SkDrawable_GpuDrawHandler};
-
-    use crate::prelude::*;
+    use std::fmt;
 
     pub type GPUDrawHandler = RefHandle<SkDrawable_GpuDrawHandler>;
 
@@ -114,7 +112,7 @@ pub mod gpu_draw_handler {
 
     #[cfg(feature = "vulkan")]
     impl GPUDrawHandler {
-        pub fn draw(&mut self, info: &crate::gpu::vk::BackendDrawableInfo) {
+        pub fn draw(&mut self, info: &gpu::vk::BackendDrawableInfo) {
             unsafe {
                 sb::C_SkDrawable_GpuDrawHandler_draw(self.native_mut(), info.native());
             }
