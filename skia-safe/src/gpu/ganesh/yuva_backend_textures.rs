@@ -179,7 +179,7 @@ impl YUVABackendTextures {
     }
 
     pub fn yuva_info(&self) -> &YUVAInfo {
-        YUVAInfo::from_native_ref(unsafe { &*sb::C_GrYUVABackendTextures_yuvaInfo(self.native()) })
+        YUVAInfo::from_native_ref(&self.native().fYUVAInfo)
     }
 
     pub fn num_planes(&self) -> usize {
@@ -187,10 +187,10 @@ impl YUVABackendTextures {
     }
 
     pub fn texture_origin(&self) -> SurfaceOrigin {
-        unsafe { sb::C_GrYUVABackendTextures_textureOrigin(self.native()) }
+        self.native().fTextureOrigin
     }
 
     pub(crate) fn native_is_valid(n: &GrYUVABackendTextures) -> bool {
-        YUVAInfo::native_is_valid(unsafe { &*sb::C_GrYUVABackendTextures_yuvaInfo(n) })
+        YUVAInfo::native_is_valid(&n.fYUVAInfo)
     }
 }
