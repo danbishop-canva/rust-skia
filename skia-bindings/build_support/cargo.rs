@@ -140,6 +140,7 @@ pub fn target_crt_static() -> bool {
 
 pub fn host() -> Target {
     let host_str = env::var("HOST").unwrap();
+    println!("HOST: {host_str}");
     parse_target(host_str)
 }
 
