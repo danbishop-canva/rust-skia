@@ -440,8 +440,6 @@ const OPAQUE_TYPES: &[&str] = &[
     "skgpu::MutableTextureState",
     // emscripten: Uses SkLRUCache (which is blocklisted)
     "skia::textlayout::ParagraphCache",
-    // Fix bindgen 0.70 layout failures
-    "skgpu::VulkanBackendContext",
 ];
 
 const BLOCKLISTED_TYPES: &[&str] = &[

@@ -9,8 +9,8 @@
 #include "include/gpu/vk/VulkanExtensions.h"
 #include "include/gpu/vk/VulkanMutableTextureState.h"
 
-// Additional types not referenced.
-extern "C" void C_GrVkTypes(GrVkSurfaceInfo*, VkQueue*, VkPhysicalDevice*) {};
+// Additional types not yet referenced.
+extern "C" void C_GrVkTypes(GrVkSurfaceInfo *) {};
 
 //
 // gpu/ganesh/vk/GrBackendDrawableInfo.h
