@@ -21,7 +21,6 @@ license = "MIT"
 version = "0.81.0"
 authors = ["Armin Sander <armin@replicator.org>"]
 edition = "2021"
-rust-version.workspace = true
 
 [lib]
 doctest = false

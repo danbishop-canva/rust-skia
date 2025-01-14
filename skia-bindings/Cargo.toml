@@ -12,7 +12,7 @@ license = "MIT"
 version = "0.81.0"
 authors = ["LongYinan <lynweklm@gmail.com>", "Armin Sander <armin@replicator.org>"]
 edition = "2021"
-rust-version.workspace = true
+
 build = "build.rs"
 links = "skia"
 include = [
