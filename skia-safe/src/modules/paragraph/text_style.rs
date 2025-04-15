@@ -60,6 +60,8 @@ pub struct Decoration {
     pub color: Color,
     pub style: TextDecorationStyle,
     pub thickness_multiplier: scalar,
+    pub thickness: scalar,
+    pub underline_position_offset: scalar,
 }
 
 impl Default for Decoration {
@@ -70,6 +72,8 @@ impl Default for Decoration {
             color: Color::TRANSPARENT,
             style: TextDecorationStyle::default(),
             thickness_multiplier: 1.0,
+            thickness: 0.0,
+            underline_position_offset: 0.0,
         }
     }
 }
@@ -367,6 +371,14 @@ impl TextStyle {
         self.decoration().thickness_multiplier
     }
 
+    pub fn decoration_thickness(&self) -> scalar {
+        self.decoration().thickness
+    }
+
+    pub fn decoration_underline_position_offset(&self) -> scalar {
+        self.decoration().underline_position_offset
+    }
+
     pub fn set_decoration(&mut self, decoration: &Decoration) {
         *self.decoration_mut_internal() = *decoration;
     }
@@ -389,6 +401,14 @@ impl TextStyle {
 
     pub fn set_decoration_thickness_multiplier(&mut self, multiplier: scalar) {
         self.decoration_mut_internal().thickness_multiplier = multiplier;
+    }
+
+    pub fn set_decoration_thickness(&mut self, thickness: scalar) {
+        self.decoration_mut_internal().thickness = thickness;
+    }
+
+    pub fn set_decoration_underline_position_offset(&mut self, offset: scalar) {
+        self.decoration_mut_internal().underline_position_offset = offset;
     }
 
     #[deprecated(since = "0.63.1", note = "use set_decoration()")]
